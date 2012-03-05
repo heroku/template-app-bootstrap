@@ -31,5 +31,5 @@ body {
 }
 
 heroku-app:after {
-  content: "app-name"
+  content: "app-name";
 }
