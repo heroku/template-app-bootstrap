@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>template-<heroku-app></heroku-app></title>
+    <title>template-app-name</title>
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,19 @@
     -->
     <link href="http://heroku.github.com/template-app-bootstrap/heroku.css" rel="stylesheet">
     <!-- /// -->
+
+    <style type="text/css">
+      .heroku-app:after {
+       content: "app-name";
+      }
+    </style>
   </head>
 
   <body>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a href="/" class="brand">template-<heroku-app></heroku-app></a>
+          <a href="/" class="brand">template-<span class="heroku-app"></span></a>
           <!--
             IMPORTANT:
             This is Heroku specific markup. Remove to customize.
@@ -37,7 +43,7 @@
       <div class="row">
         <div class="span8 offset2">
           <div class="page-header">
-            <h1>Getting started with template-<heroku-app></heroku-app></h1>
+            <h1>Getting started with template-<span class="heroku-app"></span></h1>
           </div>
 
           <p>
@@ -48,8 +54,8 @@
           </p>
 
           <ul>
-            <li>App URL: <a href="/">http://template-<heroku-app></heroku-app>.herokuapp.com</a></li>
-            <li>Git Repository: <code>git@heroku.com:template-<heroku-app></heroku-app>.git</code></li>
+            <li>App URL: <a href="/">http://template-<span class="heroku-app"></span>.herokuapp.com</a></li>
+            <li>Git Repository: <code>git@heroku.com:template-<span class="heroku-app"></span>.git</code></li>
           </ul>
 
           <hr>

@@ -30,6 +30,6 @@ body {
   }
 }
 
-heroku-app:after {
+.heroku-app:after {
   content: "app-name";
 }
