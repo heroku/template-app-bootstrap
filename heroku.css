@@ -29,7 +29,3 @@ body {
     padding: 0;
   }
 }
-
-.heroku-app:after {
-  content: "app-name";
-}
