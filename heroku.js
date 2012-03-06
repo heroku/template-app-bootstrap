@@ -1,44 +1,19 @@
-window.onload = function() {  
+// Replace each {{app-name}} with the real name application
+jQuery(document).ready(function($) {
 
- var tags = document.body.getElementsByTagName("*"), buff=[];
- for(var i=0, mx=tags.length; i<mx;i++){
-   var it = tags[i];         
-   buff[i] =  it.nodeName+" : "+ (it.id);
-   findAndReplace('{{app-name}}',appName,it);
-}
-};  
+    // We could define it from HTML
+    if (nameApp == undefined) var nameApp = "your-app";
 
-function findAndReplace(searchText, replacement, searchNode) {
-    if (!searchText || typeof replacement === 'undefined') {
-        // Throw error here if you want...
-        return;
-    }
-    var regex = typeof searchText === 'string' ?
-    new RegExp(searchText, 'g') : searchText,
-    childNodes = (searchNode || document.body).childNodes,
-    cnLength = childNodes.length,
-    excludes = 'html,head,style,title,link,meta,script,object,iframe';
-    while (cnLength--) {
-        var currentNode = childNodes[cnLength];
-        if (currentNode.nodeType === 1 &&
-            (excludes + ',').indexOf(currentNode.nodeName.toLowerCase() + ',') === -1) {
-            arguments.callee(searchText, replacement, currentNode);
-    }
-    if (currentNode.nodeType !== 3 || !regex.test(currentNode.data) ) {
-        continue;
-    }
-    var parent = currentNode.parentNode,
-    frag = (function(){
-        var html = currentNode.data.replace(regex, replacement),
-        wrap = document.createElement('div'),
-        frag = document.createDocumentFragment();
-        wrap.innerHTML = html;
-        while (wrap.firstChild) {
-            frag.appendChild(wrap.firstChild);
+    // We look into the DOM per each element with {{app-name}}
+    $('*:contains("{{app-name}}")').each(function() {
+
+        // jQuery :contains selector return every node in its tree. We just want the real container (= just 1 child)    
+        if($(this).children().length < 1) {
+
+            // We replace {{app-name}} for your new Application name and we assigned into itself
+            $(this).html($(this).html().replace("{{app-name}}",nameApp));
+            
         }
-        return frag;
-    })();
-    parent.insertBefore(frag, currentNode);
-    parent.removeChild(currentNode);
-}
-}
+    });
+    
+});
