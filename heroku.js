@@ -19,8 +19,8 @@ jQuery(document).ready(function($) {
       if($(this).children().length < 1) {
 
          // We replace {{app-name}} for your new Application name and we assigned into itself
-         $(this).html($(this).html().replace("{{app-name}}",nameApp));
-
+         // $(this).html($(this).html().replace("{{app-name}}",nameApp));
+         $(this).html('APP-NAME');
       }
    });
 
