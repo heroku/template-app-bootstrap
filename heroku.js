@@ -20,7 +20,6 @@ jQuery(document).ready(function($) {
 
          // We replace {{app-name}} for your new Application name and we assigned into itself
          // $(this).html($(this).html().replace("{{app-name}}",nameApp));
-         $(this).html('APP-NAME');
       }
    });
 
