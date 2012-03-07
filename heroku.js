@@ -1,7 +1,7 @@
 // Replace each {{app-name}} with the real name application
 jQuery(document).ready(function($) {
 
-    var nameApp;
+    var nameApp = '';
 
     // *** Getting the app name with the current url
     // We get the hostName
