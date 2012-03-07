@@ -15,14 +15,13 @@ jQuery(document).ready(function($) {
 
    // // We look into the DOM per each element with {{app-name}}
    $('*:contains("{{app-name}}")').each(function() {
-      
-   // jQuery :contains selector return every node in its tree. We just want the real container (= just 1 child)    
-   if($(this).children().length < 1) {
+      // jQuery :contains selector return every node in its tree. We just want the real container (= just 1 child)    
+      if($(this).children().length < 1) {
 
-      // We replace {{app-name}} for your new Application name and we assigned into itself
-      $(this).html($(this).html().replace("{{app-name}}",nameApp));
+         // We replace {{app-name}} for your new Application name and we assigned into itself
+         $(this).html($(this).html().replace("{{app-name}}",nameApp));
 
-     }
+      }
    });
 
 });
