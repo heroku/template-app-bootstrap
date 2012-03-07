@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
     nameApp = hostName.substr('0',hostName.indexOf(".herokuapp.com"));
 
     // // We could define it from HTML
-    // if (nameApp == '') nameApp = "your-app";
+    if (nameApp == '') nameApp = "your-app";
 
     // // We look into the DOM per each element with {{app-name}}
     // $('*:contains("{{app-name}}")').each(function() {
