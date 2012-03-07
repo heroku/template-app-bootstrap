@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
     var hostName = window.location.hostname;
 
     // And we parse it with his real application name
-    // nameApp = hostName.substr('0',hostName.indexOf(".herokuapp.com"));
+    nameApp = hostName.substr('0',hostName.indexOf(".herokuapp.com"));
 
     // // We could define it from HTML
     // if (nameApp == '') nameApp = "your-app";
